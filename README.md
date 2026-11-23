@@ -1,16 +1,94 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Professional Todo App
 
-Currently, two official plugins are available:
+A modern and responsive Todo Application built with React.js and Vite. Manage daily tasks easily with features like adding, editing, deleting, searching, and tracking completed tasks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Demo
 
-## React Compiler
+[View Live Demo](https://umarnaveeddev.github.io/react-todo-app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+- Add new todos
+- Edit existing todos
+- Delete todos
+- Mark tasks as completed or pending
+- Search todos
+- Display total, completed, and pending task counts
+- Save todos in Local Storage
+- Responsive design for mobile and desktop
+- Clean dark-themed user interface
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Technologies Used
+
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Vite
+- Git & GitHub
+
+## Installation
+
+Follow these steps to run the project locally.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/umarnaveeddev/react-todo-app.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd react-todo-app
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in your terminal.
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+## Project Structure
+
+```text
+react-todo-app/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── TodoForm.jsx
+│   │   └── TodoItem.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── README.md
+```
+
+## Author
+
+**UMAR NAVEED.DEV**
+
+- GitHub: [@umarnaveeddev](https://github.com/umarnaveeddev)
+- Portfolio: [Visit My Portfolio](https://umarnaveeddev.github.io/umar-portfolio/)
+
+---
+
+If you find this project useful, feel free to explore the repository.
