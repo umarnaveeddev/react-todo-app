@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 function TodoForm({ addTodo }) {
@@ -17,6 +18,7 @@ function TodoForm({ addTodo }) {
     <form className="todo-form" onSubmit={handleSubmit}>
       <input
         type="text"
+        aria-label="Enter a new todo"
         placeholder="Enter Todo..."
         value={text}
         onChange={(e) => setText(e.target.value)}
