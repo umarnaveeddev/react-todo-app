@@ -1,14 +1,25 @@
+
 function Header({ total, completed, pending }) {
   return (
-    <div className="header">
-      <h1>📝 Professional Todo App</h1>
+    <header className="header">
+      <h1>
+        <span aria-hidden="true">📝</span> Professional Todo App
+      </h1>
 
-      <div className="stats">
-        <p>Total : {total}</p>
-        <p>Completed : {completed}</p>
-        <p>Pending : {pending}</p>
+      <div className="stats" aria-label="Todo statistics">
+        <p>
+          Total: <strong>{total}</strong>
+        </p>
+
+        <p>
+          Completed: <strong>{completed}</strong>
+        </p>
+
+        <p>
+          Pending: <strong>{pending}</strong>
+        </p>
       </div>
-    </div>
+    </header>
   );
 }
 
