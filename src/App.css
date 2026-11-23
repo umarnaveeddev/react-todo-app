@@ -1,3 +1,8 @@
+
+/* =========================
+   GLOBAL STYLING
+========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +13,23 @@ body {
   background: #0f172a;
   font-family: "Segoe UI", sans-serif;
   color: white;
+  min-height: 100vh;
 }
 
+/* =========================
+   MAIN APP
+========================= */
+
 .app {
+  width: 100%;
   max-width: 700px;
   margin: 40px auto;
   padding: 20px;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 .header {
   text-align: center;
@@ -23,20 +38,34 @@ body {
 
 .header h1 {
   font-size: 35px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
+
+/* =========================
+   STATS
+========================= */
 
 .stats {
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .stats p {
   background: #1e293b;
   padding: 10px 15px;
   border-radius: 8px;
+  color: #cbd5e1;
 }
+
+.stats strong {
+  color: white;
+}
+
+/* =========================
+   FORM
+========================= */
 
 .todo-form {
   display: flex;
@@ -46,11 +75,62 @@ body {
 
 .todo-form input {
   flex: 1;
+  min-width: 0;
   padding: 12px;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 8px;
   font-size: 16px;
+  outline: none;
 }
+
+.todo-form input:focus,
+.search-box:focus,
+.edit-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* =========================
+   BUTTON BASE
+========================= */
+
+button {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
 
 .todo-form button {
   background: #22c55e;
@@ -61,14 +141,13 @@ body {
   cursor: pointer;
 }
 
-.search-box {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
+.todo-form button:hover {
+  background: #16a34a;
 }
+
+/* =========================
+   TODO ITEM
+========================= */
 
 .todo-item {
   background: #1e293b;
@@ -78,51 +157,147 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
 
 .todo-left {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.todo-left input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .todo-left span {
   font-size: 18px;
+  overflow-wrap: anywhere;
 }
+
+/* =========================
+   TODO BUTTONS
+========================= */
 
 .todo-buttons {
   display: flex;
   gap: 8px;
+  flex-shrink: 0;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn,
+.delete-btn {
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .edit-btn,
 .save-btn {
   background: #3b82f6;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
+}
+
+.edit-btn:hover,
+.save-btn:hover {
+  background: #2563eb;
+}
+
+.cancel-btn {
+  background: #64748b;
+}
+
+.cancel-btn:hover {
+  background: #475569;
 }
 
 .delete-btn {
   background: #ef4444;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
-.edit-input {
-  padding: 6px;
-  border-radius: 6px;
-  border: none;
-  font-size: 16px;
+.delete-btn:hover {
+  background: #dc2626;
 }
+
+/* =========================
+   EDIT INPUT
+========================= */
+
+.edit-input {
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* =========================
+   EMPTY MESSAGE
+========================= */
 
 .empty {
   text-align: center;
   margin-top: 20px;
   color: #94a3b8;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+  .app {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stats p {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .todo-item {
+    flex-wrap: wrap;
+  }
+
+  .todo-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 380px) {
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .todo-form button {
+    width: 100%;
+  }
+
+  .todo-left span {
+    font-size: 15px;
+  }
+
+  .todo-buttons button {
+    padding: 7px 10px;
+  }
 }
